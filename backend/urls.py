@@ -24,4 +24,6 @@ router.register(r'urls', views.UrlView, 'url')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('words/', views.UrlView.as_view({'post': 'post'}), name='words'),
+    # path('words?<str:url>', views.UrlView.as_view({'get': 'get'}), name='words'),
 ]
