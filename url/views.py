@@ -63,7 +63,7 @@ class UrlView(viewsets.ModelViewSet):
                 url=url,
                 defaults={'result': wordCount}
             )
-            return JsonResponse({'result': wordCount, 'top50Results': topResults, "completed": "success"})
+            return JsonResponse({'result': wordCount, 'top50Results': topResults, 'completed': 'success'})
         except requests.exceptions.RequestException as e:
-            return JsonResponse({'error': str(e), "completed": "fail"})
+            return JsonResponse({'error': str(e), 'completed': 'fail'})
 
